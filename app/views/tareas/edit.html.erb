@@ -1,0 +1,7 @@
+<h1>Actualizando Tarea</h1>
+
+<%= render 'form', tarea: @tarea %>
+
+<%= link_to 'Ver', @tarea %> |
+<%= link_to 'Borrar', tarea_path(@tarea), method: :delete, data: { confirm: '¿Estás seguro?' } %>|
+<%= link_to 'Atras', tareas_path %>

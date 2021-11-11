@@ -1,0 +1,15 @@
+
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @tarea.descripcion %>
+</p>
+
+<p>
+  <strong>Completada:</strong>
+  <%= @tarea.completada %>
+</p>
+
+<%= link_to 'Editar', edit_tarea_path(@tarea) %> |
+<%= link_to 'Borrar', tarea_path(@tarea), method: :delete, data: { confirm: '¿Estás seguro?' } %>|
+<%= link_to 'Atras', tareas_path %>

@@ -12,8 +12,10 @@
   </head>
 
   <body>
-    <br/>
+    <%= render 'tareas/navbar' %>
+      <br/>
     <div class="container">
+     <%= render 'tareas/flash' %> 
       <%= yield %>
     </div>
   </body>
