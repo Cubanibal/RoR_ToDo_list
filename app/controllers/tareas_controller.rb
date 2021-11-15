@@ -26,7 +26,7 @@ class TareasController < ApplicationController
 
     respond_to do |format|
       if @tarea.save
-        format.html { redirect_to tareas_url, notice: "Tarea creada exitosamente." }
+        format.html { redirect_to root_url, notice: "Tarea creada exitosamente." }
         format.json { render :show, status: :created, location: @tarea }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class TareasController < ApplicationController
   def update
     respond_to do |format|
       if @tarea.update(tarea_params)
-        format.html { redirect_to tareas_url, notice: "Tarea actualizada exitosamente." }
+        format.html { redirect_to root_url, notice: "Tarea actualizada exitosamente." }
         format.json { render :show, status: :ok, location: @tarea }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class TareasController < ApplicationController
   def destroy
     @tarea.destroy
     respond_to do |format|
-      format.html { redirect_to tareas_url, notice: "Tarea eliminada exitosamente." }
+      format.html { redirect_to root_url, notice: "Tarea eliminada exitosamente." }
       format.json { head :no_content }
     end
   end
