@@ -1,0 +1,26 @@
+
+
+
+  <%= form_with(model: @tarea, class: "d-flex") do |form| %>
+  
+    <% if @tarea.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@tarea.errors.count, "error") %> prohibited this tarea from being saved:</h2>
+
+        <ul>
+          <% @tarea.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+
+  
+    
+    <%= form.text_field :descripcion, class:"form-control me-2" %> 
+    <%= form.submit class: "btn btn-outline-secondary" %>
+    
+    
+  
+  <% end %>

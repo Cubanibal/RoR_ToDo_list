@@ -3,6 +3,7 @@ class TareasController < ApplicationController
 
   # GET /tareas or /tareas.json
   def index
+    @tarea = Tarea.new
     @tareas = Tarea.all
   end
 
@@ -25,7 +26,7 @@ class TareasController < ApplicationController
 
     respond_to do |format|
       if @tarea.save
-        format.html { redirect_to @tarea, notice: "Tarea creada exitosamente." }
+        format.html { redirect_to tareas_url, notice: "Tarea creada exitosamente." }
         format.json { render :show, status: :created, location: @tarea }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class TareasController < ApplicationController
   def update
     respond_to do |format|
       if @tarea.update(tarea_params)
-        format.html { redirect_to @tarea, notice: "Tarea actualizada exitosamente." }
+        format.html { redirect_to tareas_url, notice: "Tarea actualizada exitosamente." }
         format.json { render :show, status: :ok, location: @tarea }
       else
         format.html { render :edit, status: :unprocessable_entity }

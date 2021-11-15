@@ -1,2 +1,6 @@
 es:
   hello: "Hola mundo"
+es:
+  helpers:
+    submit:
+      create: "Nueva %{model}"
